@@ -59,7 +59,7 @@ p,h1,h2,label,table,button,li{
 
 
 .calcola{
-    margin-top:3em;
+    margin-top:2em;
 }
 .errore{
     color:red;
@@ -70,7 +70,7 @@ p,h1,h2,label,table,button,li{
     color:#468ac1;
 }
 #output{
-    margin:2em 0 2em 0;
+    margin:1.5em 0 0 0;
 }
 #output p{
     margin:0em;
@@ -101,15 +101,15 @@ thead{
     font-weight:bold;
 }
 h2{
-    font-size:130%;
+    font-size:120%;
     padding:0;
-    margin-top:2em;
-    margin-bottom:0.5em;
+    margin-top:1.5em;
+    margin-bottom:0.4em;
     color:#396b9e;
 }
 h3{
     font-size:106%;
-    margin-top:0,5em;
+    margin-top:0.1em;
 }
 img{
     width:100%;

@@ -198,26 +198,37 @@ function scrolla(vai){
 $(document).on('pageinit','#tabelle' ,function () {
     mostra_tab_e_img();    
     $("#tabelle input:radio").change(mostra_tab_e_img);
+    $("#eta").change(mostra_tab_e_img);
 });
 function mostra_tab_e_img(){
     sesso=$("input:radio[name='sesso_tab']:checked").val();
-    eta=$("input:radio[name='eta']:checked").val();
+    //eta=$("input:radio[name='eta']:checked").val();
+    eta=$("#eta").val();
+    if (eta=="") {
+        alert ("L'età non è un numero");
+        $("#eta").val(1);
+        eta=1;
+    }
     prima_riga=(eta*4)-4;
     
     //tabelle
-    $(".pressioni_m").fadeOut(100);
+    /*$(".pressioni_m").fadeOut(100);
     $(".pressioni_f").fadeOut(100);
-    $(".pressioni_"+sesso).fadeIn(400);
+    $(".pressioni_"+sesso).fadeIn(400);*/
+    $(".pressioni_m").hide();
+    $(".pressioni_f").hide();
+    $(".pressioni_"+sesso).show();
     
     tabella=$(".pressioni_"+sesso+" thead").next("tbody");
     $(tabella).children("tr").hide();
-    $(tabella).children("tr").slice(prima_riga,prima_riga+4).fadeIn(400);
+    //$(tabella).children("tr").slice(prima_riga,prima_riga+4).fadeIn(400);
+    $(tabella).children("tr").slice(prima_riga,prima_riga+4).show();
     
     //immagini
-    $(".curve_m_p").fadeOut(100);
-    $(".curve_m_g").fadeOut(100);
-    $(".curve_f_p").fadeOut(100);
-    $(".curve_f_g").fadeOut(100);
+    $(".curve_m_p").hide();
+    $(".curve_m_g").hide();
+    $(".curve_f_p").hide();
+    $(".curve_f_g").hide();
     if (sesso=="m") {
         let_sesso="i";
     } else {
@@ -232,5 +243,5 @@ function mostra_tab_e_img(){
     }
     $(".titolo_tabelle").html("Tavola dei percentili della pressione arteriosa per bambin"+let_sesso+" e adolescenti");
     $(".titolo_curve").html("Curve di crescita per bambin"+let_sesso+" di età "+let_eta+" 36 mesi");
-    $(".curve_"+sesso+"_"+rif_eta).fadeIn(400);
+    $(".curve_"+sesso+"_"+rif_eta).show();
 }
