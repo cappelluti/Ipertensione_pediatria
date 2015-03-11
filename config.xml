@@ -7,7 +7,7 @@
 
     <!-- versionCode is optional and Android only -->
 
-    <preference name="phonegap-version" value="3.3.0" />
+    <preference name="phonegap-version" value="3.6.3" />
     <name>Ipertensione in pediatria</name>
     <description>Applicazione di calcolo dei percentili per l'ipertensione in pediatria</description>
 	<author href="http://www.edizioniseed.it" email="info@edizioniseed.it">SEEd</author>
